@@ -37,7 +37,10 @@ const CursorChat = ({cursor, cursorState, setCursorState, updateMyPresence}: Cur
       {cursorState.mode === CursorMode.Chat && (
         <>
           <CursorSVG color="#000" />
-          <div className="absolute left-2 top-2 bg-blue-500 px-4 py-2 text-sm leading-relaxed text-white rounded-[20px]">
+          {/* e.stopPropogation in order to avoid opening of the reaction box when 'e' is pressed in chat mode */}
+          <div className="absolute left-2 top-2 bg-blue-500 px-4 py-2 text-sm leading-relaxed text-white rounded-[20px]"
+            onKeyUp={(e) => e.stopPropagation()}
+          >
             {cursorState.previousMessage && (
               <div>{cursorState.previousMessage}</div>
             )}

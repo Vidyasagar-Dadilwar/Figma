@@ -126,19 +126,20 @@ const Live = () => {
           mode: CursorMode.Hidden,
         });
       } else if (e.key === "e") {
-        if (cursorState.mode === CursorMode.ReactionSelector) {
-          // Exit the ReactionSelector mode
-          setCursorState({
-            mode: CursorMode.Hidden,
-          });
-        } else {
-          // Enter the ReactionSelector mode
-          setCursorState({
-            mode: CursorMode.ReactionSelector,
-          });
+        if (cursorState.mode !== CursorMode.Chat) {
+          if (cursorState.mode === CursorMode.ReactionSelector) {
+            setCursorState({
+              mode: CursorMode.Hidden,
+            });
+          } else {
+            setCursorState({
+              mode: CursorMode.ReactionSelector,
+            });
+          }
         }
       }
     };
+
 
     const onKeyDown = (e: KeyboardEvent) => {
       if (e.key === "/") {

@@ -2,11 +2,17 @@
 
 import Live from "@/components/Live";
 import { Room } from "./Room";
+import Navbar from "../components/Navbar";
+import { ActiveElement } from "@/types/type";
 
 export default function Page() {
   return (
-    <div>
-      <Live />
-    </div>
+    <main className="h-screen overflow-hidden">
+      <Navbar/>
+
+      <section className="flex h-full flex-row">
+        <Live />
+      </section>
+    </main>
   );
 }

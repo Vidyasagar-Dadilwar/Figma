@@ -7,12 +7,12 @@ type Props = {
 export default function ReactionSelector({ setReaction }: Props) {
   return (
     <div
-      className="absoulte bottom-20 right-0 left-0 mx-auto w-fit transform rounded-full bg-white px-2"
-      style={{
-        boxShadow:
-          "0 0 0 0.5px rgba(0, 0, 0, 0.08), 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
-      }}
-      onPointerMove={(e) => e.stopPropagation()}
+    className="absoulte bottom-20 right-0 left-0 mx-auto w-fit transform rounded-full bg-white px-2"
+    style={{
+      boxShadow:
+      "0 0 0 0.5px rgba(0, 0, 0, 0.08), 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+    }}
+    onPointerMove={(e) => e.stopPropagation()}
     >
       <ReactionButton reaction="👍" onSelect={setReaction} />
       <ReactionButton reaction="🔥" onSelect={setReaction} />
